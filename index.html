@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Inspire Sights Technologies - Learn Power BI, Tableau, SQL, Databricks, MS Fabric with expert trainers. 500+ trained, 200+ placements. Certification + placement support included.">
+<meta name="keywords" content="Data Analytics Training, Power BI Course, Tableau Training, SQL Course, Databricks, MS Fabric, Business Intelligence, Inspire Sights Technologies">
+<title>Inspire Sights Technologies | Power BI · Tableau · Databricks · MS Fabric · Certification & Placement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+tailwind.config={theme:{extend:{colors:{navy:{'900':'#0D1B2A','800':'#111f33','700':'#172640'},brand:{'600':'#2563eb','700':'#1d4ed8','800':'#1e40af'}},fontFamily:{sans:['Inter','sans-serif'],display:['Space Grotesk','sans-serif']}}}}
+</script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1e293b;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#2563eb;border-radius:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,10px) scale(.95)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 15px rgba(37,99,235,.3)}50%{box-shadow:0 0 35px rgba(37,99,235,.7)}}
+.hero-bg{background:radial-gradient(ellipse at 20% 50%,rgba(29,78,216,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(6,182,212,.1) 0%,transparent 50%),linear-gradient(180deg,#0D1B2A 0%,#111827 100%)}
+.hero-grid{background-image:linear-gradient(rgba(37,99,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.07) 1px,transparent 1px);background-size:40px 40px}
+.orb{border-radius:50%;filter:blur(70px);position:absolute;pointer-events:none;animation:orbFloat 18s ease-in-out infinite}
+.anim-float-slow{animation:floatSlow 8s ease-in-out infinite}
+.text-gradient{background:linear-gradient(135deg,#60a5fa,#22d3ee,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.banner-shimmer{background:linear-gradient(90deg,#1d4ed8,#0891b2,#7c3aed,#1d4ed8);background-size:300%;animation:shimmer 4s linear infinite}
+.btn-blue{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:.75rem 1.75rem;border-radius:.625rem;font-weight:600;font-size:.9375rem;cursor:pointer;border:none;transition:all .3s ease;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,99,235,.45)}
+.btn-outline{background:transparent;color:#fff;padding:.75rem 1.75rem;border-radius:.625rem;font-weight:600;font-size:.9375rem;cursor:pointer;border:2px solid rgba(255,255,255,.3);transition:all .3s ease;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+.btn-glow{animation:glowPulse 3s ease-in-out infinite}
+.card-hover{transition:transform .3s ease,box-shadow .3s ease}
+.card-hover:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(37,99,235,.18)}
+.feature-icon{transition:transform .3s ease}
+.feature-card:hover .feature-icon{transform:scale(1.15) rotate(5deg)}
+.course-card{position:relative;overflow:hidden;transition:all .3s ease}
+.course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--af),var(--at))}
+.course-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(0,0,0,.12)}
+.section-eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#2563eb}
+.path-step{transition:transform .3s ease;cursor:default}
+.path-step:hover{transform:scale(1.08) translateY(-4px)}
+.stat-card{border:1px solid rgba(37,99,235,.2);transition:all .3s ease}
+.stat-card:hover{border-color:#2563eb;box-shadow:0 0 25px rgba(37,99,235,.2);transform:scale(1.03)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.faq-body.open{max-height:500px}
+.faq-chevron{transition:transform .3s ease}
+.faq-item.active .faq-chevron{transform:rotate(180deg)}
+.navbar{transition:all .3s ease}
+.navbar.solid{background:rgba(13,27,42,.98)!important;backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+#mob-menu{max-height:0;overflow:hidden;transition:max-height .4s ease}
+#mob-menu.open{max-height:600px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.tag{background:rgba(37,99,235,.07);color:#2563eb;border:1px solid rgba(37,99,235,.15);font-size:.72rem;padding:.25rem .6rem;border-radius:.375rem;font-weight:500;display:inline-block}
+.wa-float{animation:float 3s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease!important}
+.wa-float:hover{transform:scale(1.12)!important;box-shadow:0 12px 30px rgba(37,211,102,.45)!important}
+.placement-feature{transition:transform .3s ease}
+.placement-feature:hover{transform:translateX(5px)}
+.testimonial-card{transition:transform .3s ease,box-shadow .3s ease}
+.testimonial-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(37,99,235,.15)}
+.trainer-card{transition:transform .3s ease,box-shadow .3s ease}
+.trainer-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px -12px rgba(37,99,235,.18)}
+.cert-badge{transition:transform .3s ease,box-shadow .3s ease}
+.cert-badge:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(37,99,235,.3)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.nav-link{position:relative;padding-bottom:2px}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#2563eb;transition:width .3s ease}
+.nav-link:hover::after{width:100%}
+.corp-card{transition:all .3s ease;border-left:4px solid transparent}
+.corp-card:hover{transform:translateY(-5px);border-left-color:#2563eb;box-shadow:0 20px 40px -12px rgba(37,99,235,.15)}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="bg-white">
+
+<!-- ═══════════════ DEMO BANNER ═══════════════ -->
+<div id="demo-banner" class="banner-shimmer text-white text-sm py-2.5 text-center font-medium relative z-50 flex items-center justify-center gap-3">
+  <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+  <span>🎓 Free Demo Class Available — Register Today and Launch Your Analytics Career!</span>
+  <a href="#contact" class="underline font-bold hover:text-cyan-200 transition-colors">Reserve Your Seat →</a>
+  <button onclick="document.getElementById('demo-banner').style.display='none'" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors" aria-label="Close banner">
+    <i class="fa fa-xmark"></i>
+  </button>
+</div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar" class="navbar fixed left-0 right-0 z-40 bg-transparent py-4" style="top:40px">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+          <i class="fa fa-lightbulb text-white"></i>
+        </div>
+        <div>
+          <span class="font-display font-bold text-white text-base leading-tight block">Inspire Sights</span>
+          <span class="text-cyan-400 text-xs font-semibold leading-none -mt-0.5 block">Technologies</span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="#courses" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Courses</a>
+        <a href="#corporate" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Corporate</a>
+        <a href="#certification" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Certifications</a>
+        <a href="#placement" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Placement</a>
+        <a href="#trainers" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Trainers</a>
+        <a href="#testimonials" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Reviews</a>
+        <a href="#faq" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">FAQ</a>
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="tel:+919876543210" class="text-sm text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors"><i class="fa fa-phone text-blue-400 text-xs"></i>+91 98765 43210</a>
+        <a href="#contact" class="btn-blue text-sm py-2.5 px-5">Book Free Demo <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+      <button id="mob-toggle" class="lg:hidden text-white p-1" aria-label="Toggle menu">
+        <i id="mob-icon" class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+    <div id="mob-menu">
+      <div class="pt-4 pb-3 border-t border-white/10 mt-4 space-y-1">
+        <a href="#courses" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Courses</a>
+        <a href="#corporate" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Corporate Trainings</a>
+        <a href="#certification" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Certifications</a>
+        <a href="#placement" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Placement</a>
+        <a href="#trainers" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Trainers</a>
+        <a href="#testimonials" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">Reviews</a>
+        <a href="#faq" class="block text-gray-300 hover:text-white py-2.5 text-sm mob-link">FAQ</a>
+        <div class="pt-3"><a href="#contact" class="btn-blue justify-center text-sm py-3 w-full">Book Free Demo Class</a></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden" style="padding-top:120px">
+  <div class="hero-grid absolute inset-0"></div>
+  <div class="orb w-80 h-80 bg-blue-600 opacity-15 -top-10 -left-16" style="animation-delay:0s"></div>
+  <div class="orb w-60 h-60 bg-cyan-500 opacity-10 top-1/3 right-8" style="animation-delay:6s"></div>
+  <div class="orb w-44 h-44 bg-violet-600 opacity-10 bottom-20 left-1/4" style="animation-delay:12s"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
+      <!-- Left -->
+      <div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.1rem] font-extrabold text-white leading-[1.1] mb-6">
+          Master <span class="text-gradient">Data Analytics</span> &amp; Business Intelligence for <span class="text-blue-400">High-Paying Careers</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
+          Learn industry-leading tools — from Power BI to Databricks — with expert trainers at Inspire Sights Technologies. Become job-ready with hands-on projects, certification guidance, and 100% placement support.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="#contact" class="btn-blue btn-glow text-base"><i class="fa fa-graduation-cap"></i>Enroll Now</a>
+          <a href="#contact" class="btn-outline text-base"><i class="fa fa-play-circle"></i>Book Free Demo Class</a>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 mb-10">
+          <div class="flex items-center gap-2.5">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 rounded-full bg-blue-600 border-2 border-navy-900 flex items-center justify-center text-white text-xs font-bold">AK</div>
+              <div class="w-8 h-8 rounded-full bg-violet-600 border-2 border-navy-900 flex items-center justify-center text-white text-xs font-bold">SR</div>
+              <div class="w-8 h-8 rounded-full bg-cyan-600 border-2 border-navy-900 flex items-center justify-center text-white text-xs font-bold">MP</div>
+              <div class="w-8 h-8 rounded-full bg-emerald-600 border-2 border-navy-900 flex items-center justify-center text-white text-xs font-bold">+</div>
+            </div>
+            <div>
+              <div class="text-white text-sm font-semibold">500+ Students</div>
+              <div class="text-gray-400 text-xs">Already enrolled</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <div class="flex gap-0.5">
+              <i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i>
+            </div>
+            <span class="text-gray-300 text-sm font-medium">4.9/5 Rating</span>
+          </div>
+        </div>
+        <div class="pt-6 border-t border-white/10">
+          <p class="text-gray-500 text-xs uppercase tracking-wider mb-3">Tools You'll Master</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">Power BI</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">Tableau</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">SQL</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">Databricks</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">MS Fabric</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">Qlik Sense</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Dashboard Mockup -->
+      <div class="hidden lg:flex justify-center items-center relative">
+        <div class="anim-float-slow bg-gray-900/85 backdrop-blur-xl border border-blue-900/40 rounded-2xl p-5 w-[390px] relative z-10 shadow-2xl">
+          <div class="flex items-center justify-between mb-5">
+            <div><div class="text-white font-semibold text-sm">Analytics Dashboard</div><div class="text-gray-500 text-xs">Business Intelligence Report</div></div>
+            <div class="flex items-center gap-1.5"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span><span class="text-green-400 text-xs font-medium">Live</span></div>
+          </div>
+          <div class="grid grid-cols-3 gap-2.5 mb-5">
+            <div class="bg-blue-600/15 rounded-xl p-3"><div class="text-xs text-gray-400 mb-1">Revenue</div><div class="text-white font-bold font-display text-lg">₹4.2M</div><div class="text-green-400 text-xs">↑ 18.3%</div></div>
+            <div class="bg-cyan-600/15 rounded-xl p-3"><div class="text-xs text-gray-400 mb-1">Users</div><div class="text-white font-bold font-display text-lg">12.4K</div><div class="text-green-400 text-xs">↑ 9.7%</div></div>
+            <div class="bg-violet-600/15 rounded-xl p-3"><div class="text-xs text-gray-400 mb-1">Conv.</div><div class="text-white font-bold font-display text-lg">3.8%</div><div class="text-emerald-400 text-xs">↑ 0.4%</div></div>
+          </div>
+          <div class="mb-5">
+            <div class="text-xs text-gray-400 mb-3">Monthly Revenue</div>
+            <div class="flex items-end gap-1.5 h-20" id="hero-bars"></div>
+            <div class="flex justify-between text-xs text-gray-500 mt-1"><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+          </div>
+          <div class="space-y-2.5">
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-gray-400">Power BI</span><span class="text-blue-400">92%</span></div><div class="h-1.5 bg-gray-800 rounded-full overflow-hidden"><div id="pb1" class="h-full bg-blue-500 rounded-full w-0" style="transition:width 1.5s ease .5s"></div></div></div>
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-gray-400">Databricks</span><span class="text-orange-400">88%</span></div><div class="h-1.5 bg-gray-800 rounded-full overflow-hidden"><div id="pb2" class="h-full bg-orange-500 rounded-full w-0" style="transition:width 1.5s ease .7s"></div></div></div>
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-gray-400">MS Fabric</span><span class="text-emerald-400">85%</span></div><div class="h-1.5 bg-gray-800 rounded-full overflow-hidden"><div id="pb3" class="h-full bg-emerald-500 rounded-full w-0" style="transition:width 1.5s ease .9s"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-500 text-xs">
+    <span>Scroll to explore</span><i class="fa fa-chevron-down animate-bounce mt-1"></i>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<section class="bg-gray-900 py-12 border-y border-blue-900/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="stat-card text-center py-7 px-4 rounded-2xl bg-gray-800/60 cursor-default"><div class="font-display font-extrabold text-4xl text-white mb-1 counter" data-target="500" data-suffix="+">0</div><div class="text-gray-400 text-sm">Students Trained</div></div>
+      <div class="stat-card text-center py-7 px-4 rounded-2xl bg-gray-800/60 cursor-default"><div class="font-display font-extrabold text-4xl text-white mb-1 counter" data-target="200" data-suffix="+">0</div><div class="text-gray-400 text-sm">Successful Placements</div></div>
+      <div class="stat-card text-center py-7 px-4 rounded-2xl bg-gray-800/60 cursor-default"><div class="font-display font-extrabold text-4xl text-white mb-1 counter" data-target="50" data-suffix="+">0</div><div class="text-gray-400 text-sm">Hiring Partners</div></div>
+      <div class="stat-card text-center py-7 px-4 rounded-2xl bg-gray-800/60 cursor-default"><div class="font-display font-extrabold text-4xl text-white mb-1 counter" data-target="98" data-suffix="%">0</div><div class="text-gray-400 text-sm">Student Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COURSES ═══════════════ -->
+<section id="courses" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Our Programs</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Industry-Ready <span class="text-blue-600">Certification Courses</span></h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">Comprehensive programs designed with real-world projects, live sessions, and certification preparation</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Power BI -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#2563eb;--at:#60a5fa">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"><i class="fa fa-chart-bar text-blue-600 text-xl"></i></div><span class="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-full">Most Popular</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Power BI</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Master Microsoft's leading BI tool. Build interactive dashboards, complex data models, and DAX expressions used in enterprise analytics.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Data Modeling</span><span class="tag">DAX Formulas</span><span class="tag">Dashboards</span><span class="tag">Real Projects</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-blue-400 mr-1"></i>8 Weeks</span><span><i class="fa fa-certificate text-blue-400 mr-1"></i>Microsoft Cert</span><span><i class="fa fa-video text-blue-400 mr-1"></i>Online+Offline</span></div>
+        <a href="#contact" class="btn-blue w-full justify-center text-sm py-2.5">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- Tableau -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#f59e0b;--at:#fbbf24">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center"><i class="fa fa-chart-area text-amber-600 text-xl"></i></div><span class="bg-amber-50 text-amber-700 text-xs font-bold px-2.5 py-1 rounded-full">High Demand</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Tableau</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Create stunning, interactive visualizations and storytelling reports. Widely used by top MNCs for business decision-making.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Data Visualization</span><span class="tag">Interactive Dashboards</span><span class="tag">Business Reporting</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-amber-400 mr-1"></i>6 Weeks</span><span><i class="fa fa-certificate text-amber-400 mr-1"></i>Tableau Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- Databricks -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#ff3621;--at:#ff6b4a">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center"><i class="fa fa-fire text-red-600 text-xl"></i></div><span class="bg-red-50 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full">Trending 🔥</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Databricks</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Master the unified data analytics platform built on Apache Spark. Learn to build data pipelines, process big data at scale, and perform ML-powered analytics using Delta Lake, Lakehouse architecture, and collaborative notebooks.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Apache Spark</span><span class="tag">Delta Lake</span><span class="tag">Lakehouse</span><span class="tag">MLflow</span><span class="tag">PySpark</span><span class="tag">Unity Catalog</span></div>
+        <div class="space-y-1.5 mb-5 text-xs text-gray-500">
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-red-400 mt-0.5"></i><span>Build end-to-end data pipelines using Delta Live Tables</span></div>
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-red-400 mt-0.5"></i><span>Process petabyte-scale data with PySpark &amp; SparkSQL</span></div>
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-red-400 mt-0.5"></i><span>Deploy ML models with MLflow tracking &amp; model registry</span></div>
+        </div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-red-400 mr-1"></i>8 Weeks</span><span><i class="fa fa-certificate text-red-400 mr-1"></i>Databricks Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-red-500 text-red-600 hover:bg-red-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- MS Fabric -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#0078d4;--at:#50e6ff">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center"><i class="fa fa-cubes text-sky-600 text-xl"></i></div><span class="bg-sky-50 text-sky-700 text-xs font-bold px-2.5 py-1 rounded-full">New 🆕</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Microsoft Fabric</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Microsoft's next-generation unified analytics platform that brings together Data Engineering, Data Warehousing, Data Science, Real-Time Analytics, and Business Intelligence into a single SaaS solution — all powered by OneLake.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">OneLake</span><span class="tag">Data Factory</span><span class="tag">Synapse Analytics</span><span class="tag">Real-Time Hub</span><span class="tag">Power BI Integration</span><span class="tag">Copilot AI</span></div>
+        <div class="space-y-1.5 mb-5 text-xs text-gray-500">
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-sky-500 mt-0.5"></i><span>Design end-to-end Lakehouse and Data Warehouse solutions</span></div>
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-sky-500 mt-0.5"></i><span>Build real-time analytics pipelines with KQL &amp; Eventstreams</span></div>
+          <div class="flex items-start gap-2"><i class="fa fa-check-circle text-sky-500 mt-0.5"></i><span>Integrate AI Copilot for intelligent data exploration</span></div>
+        </div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-sky-400 mr-1"></i>8 Weeks</span><span><i class="fa fa-certificate text-sky-400 mr-1"></i>DP-600 Fabric Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-sky-500 text-sky-600 hover:bg-sky-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- QlikView -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#16a34a;--at:#4ade80">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"><i class="fa fa-chart-pie text-green-600 text-xl"></i></div><span class="bg-green-50 text-green-700 text-xs font-bold px-2.5 py-1 rounded-full">Enterprise</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">QlikView</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Design powerful analytics applications and enterprise dashboards using QlikView's associative data model for large-scale BI.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Dashboard Design</span><span class="tag">Analytics Applications</span><span class="tag">Associative Model</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-green-400 mr-1"></i>5 Weeks</span><span><i class="fa fa-certificate text-green-400 mr-1"></i>Qlik Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- Qlik Sense -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#7c3aed;--at:#a78bfa">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center"><i class="fa fa-circle-nodes text-violet-600 text-xl"></i></div><span class="bg-violet-50 text-violet-700 text-xs font-bold px-2.5 py-1 rounded-full">New Batch</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Qlik Sense</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Master modern self-service analytics and data storytelling with Qlik Sense for next-gen business intelligence workflows.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Self-Service Analytics</span><span class="tag">Data Storytelling</span><span class="tag">Augmented Analytics</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-violet-400 mr-1"></i>5 Weeks</span><span><i class="fa fa-certificate text-violet-400 mr-1"></i>Qlik Sense Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-violet-500 text-violet-600 hover:bg-violet-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- SQL -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#0891b2;--at:#22d3ee">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center"><i class="fa fa-database text-cyan-600 text-xl"></i></div><span class="bg-cyan-50 text-cyan-700 text-xs font-bold px-2.5 py-1 rounded-full">Foundation</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">SQL</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Build rock-solid database skills from fundamentals to advanced queries. Master stored procedures and query optimization for analytics roles.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">DB Fundamentals</span><span class="tag">Joins & Subqueries</span><span class="tag">Stored Procedures</span><span class="tag">Optimization</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-cyan-400 mr-1"></i>6 Weeks</span><span><i class="fa fa-certificate text-cyan-400 mr-1"></i>SQL Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <!-- Advanced Excel -->
+      <div class="course-card bg-white rounded-2xl border border-gray-100 p-6 shadow-sm reveal" style="--af:#059669;--at:#34d399">
+        <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center"><i class="fa fa-table-cells text-emerald-600 text-xl"></i></div><span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full">Beginner Friendly</span></div>
+        <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Advanced Excel</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Go far beyond basics. Master Pivot Tables, Power Query, advanced formulas, and professional Excel dashboards for business analysis.</p>
+        <div class="flex flex-wrap gap-1.5 mb-5"><span class="tag">Pivot Tables</span><span class="tag">Power Query</span><span class="tag">Dashboards</span><span class="tag">Advanced Formulas</span></div>
+        <div class="flex items-center gap-4 mb-5 text-xs text-gray-500"><span><i class="fa fa-clock text-emerald-400 mr-1"></i>4 Weeks</span><span><i class="fa fa-certificate text-emerald-400 mr-1"></i>Excel Expert Cert</span></div>
+        <a href="#contact" class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded-xl font-semibold text-sm border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white transition-all">Enroll Now <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+    </div>
+    <div class="text-center mt-12 reveal">
+      <p class="text-gray-500 mb-4">Not sure which course to start with? Talk to our counsellor.</p>
+      <a href="#contact" class="btn-blue">Get Free Career Counselling <i class="fa fa-arrow-right text-xs"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CORPORATE TRAININGS ═══════════════ -->
+<section id="corporate" class="py-20 bg-navy-900 relative overflow-hidden">
+  <div class="hero-grid absolute inset-0 opacity-40"></div>
+  <div class="orb w-72 h-72 bg-blue-600 opacity-10 -top-16 -right-16" style="animation-delay:4s"></div>
+  <div class="orb w-48 h-48 bg-cyan-500 opacity-10 bottom-10 left-10" style="animation-delay:10s"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2 text-cyan-400">For Organisations</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Corporate <span class="text-gradient">Training Programs</span></h2>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto">Upskill your entire team with customised, instructor-led analytics training. We partner with enterprises, IT firms, and SMEs to build data-literate workforces that drive results.</p>
+    </div>
+
+    <!-- Key Benefits -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center reveal card-hover">
+        <div class="w-12 h-12 bg-blue-600/25 rounded-xl flex items-center justify-center mx-auto mb-3"><i class="fa fa-sliders text-blue-300 text-xl"></i></div>
+        <h4 class="text-white font-semibold mb-1">Customised Curriculum</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Course content tailored to your tech stack, industry, and team's current skill level</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center reveal card-hover">
+        <div class="w-12 h-12 bg-cyan-600/25 rounded-xl flex items-center justify-center mx-auto mb-3"><i class="fa fa-users text-cyan-300 text-xl"></i></div>
+        <h4 class="text-white font-semibold mb-1">Group &amp; Batch Training</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Cohort-based training from 5 to 200+ employees — online, on-site, or hybrid delivery</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center reveal card-hover">
+        <div class="w-12 h-12 bg-violet-600/25 rounded-xl flex items-center justify-center mx-auto mb-3"><i class="fa fa-file-contract text-violet-300 text-xl"></i></div>
+        <h4 class="text-white font-semibold mb-1">Progress Reporting</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Detailed employee progress dashboards and skill assessment reports for management</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center reveal card-hover">
+        <div class="w-12 h-12 bg-emerald-600/25 rounded-xl flex items-center justify-center mx-auto mb-3"><i class="fa fa-certificate text-emerald-300 text-xl"></i></div>
+        <h4 class="text-white font-semibold mb-1">Corporate Certificates</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Co-branded completion certificates for every participant to recognise their achievement</p>
+      </div>
+    </div>
+
+    <!-- Corporate Training Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+
+      <div class="corp-card bg-white/5 border border-white/10 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 bg-blue-600/30 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-chart-bar text-blue-300 text-lg"></i></div>
+          <div><h3 class="text-white font-bold">Power BI for Teams</h3><span class="text-xs text-blue-400">2 – 5 Days Intensive</span></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Empower your business teams to build self-service dashboards and reduce dependence on IT. Covers report design, RLS, workspace governance, and integration with your existing data sources.</p>
+        <div class="flex flex-wrap gap-1.5"><span class="bg-blue-900/40 text-blue-300 text-xs px-2.5 py-1 rounded-full border border-blue-700/30">Dashboard Design</span><span class="bg-blue-900/40 text-blue-300 text-xs px-2.5 py-1 rounded-full border border-blue-700/30">Row-Level Security</span><span class="bg-blue-900/40 text-blue-300 text-xs px-2.5 py-1 rounded-full border border-blue-700/30">Power Apps Integration</span></div>
+      </div>
+
+      <div class="corp-card bg-white/5 border border-white/10 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 bg-red-600/30 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-fire text-red-300 text-lg"></i></div>
+          <div><h3 class="text-white font-bold">Databricks for Engineers</h3><span class="text-xs text-red-400">3 – 5 Days Intensive</span></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Upskill your data engineering and ML teams on the Databricks Lakehouse platform. Covers Delta Lake architecture, collaborative notebooks, CI/CD pipelines, and MLflow for model lifecycle management.</p>
+        <div class="flex flex-wrap gap-1.5"><span class="bg-red-900/40 text-red-300 text-xs px-2.5 py-1 rounded-full border border-red-700/30">Delta Live Tables</span><span class="bg-red-900/40 text-red-300 text-xs px-2.5 py-1 rounded-full border border-red-700/30">PySpark</span><span class="bg-red-900/40 text-red-300 text-xs px-2.5 py-1 rounded-full border border-red-700/30">MLflow</span></div>
+      </div>
+
+      <div class="corp-card bg-white/5 border border-white/10 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 bg-sky-600/30 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-cubes text-sky-300 text-lg"></i></div>
+          <div><h3 class="text-white font-bold">Microsoft Fabric Bootcamp</h3><span class="text-xs text-sky-400">3 – 5 Days Intensive</span></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Transition your organisation to Microsoft Fabric's unified SaaS analytics platform. Covers OneLake governance, Data Factory pipelines, Synapse Data Warehouse, and Copilot-powered BI for enterprise teams.</p>
+        <div class="flex flex-wrap gap-1.5"><span class="bg-sky-900/40 text-sky-300 text-xs px-2.5 py-1 rounded-full border border-sky-700/30">OneLake</span><span class="bg-sky-900/40 text-sky-300 text-xs px-2.5 py-1 rounded-full border border-sky-700/30">Data Factory</span><span class="bg-sky-900/40 text-sky-300 text-xs px-2.5 py-1 rounded-full border border-sky-700/30">Copilot AI</span></div>
+      </div>
+
+      <div class="corp-card bg-white/5 border border-white/10 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 bg-amber-600/30 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-chart-area text-amber-300 text-lg"></i></div>
+          <div><h3 class="text-white font-bold">Tableau Enterprise Training</h3><span class="text-xs text-amber-400">2 – 4 Days Intensive</span></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Train your analytics and management teams to leverage Tableau for data-driven storytelling. Covers Tableau Server/Cloud governance, embedded analytics, and advanced calculation techniques.</p>
+        <div class="flex flex-wrap gap-1.5"><span class="bg-amber-900/40 text-amber-300 text-xs px-2.5 py-1 rounded-full border border-amber-700/30">Tableau Server</span><span class="bg-amber-900/40 text-amber-300 text-xs px-2.5 py-1 rounded-full border border-amber-700/30">LOD Calculations</span><span class="bg-amber-900/40 text-amber-300 text-xs px-2.5 py-1 rounded-full border border-amber-700/30">Embedded Analytics</span></div>
+      </div>
+
+      <div class="corp-card bg-white/5 border border-white/10 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 bg-cyan-600/30 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-database text-cyan-300 text-lg"></i></div>
+          <div><h3 class="text-white font-bold">SQL for Business Teams</h3><span class="text-xs text-cyan-400">2 – 3 Days Intensive</span></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Enable analysts, product managers, and operations teams to query databases confidently. Covers business-focused SQL skills — joins, aggregations, CTEs, and connecting to BI tools for immediate impact.</p>
+        <div class="flex flex-wrap gap-1.5"><span class="bg-cyan-900/40 text-cyan-300 text-xs px-2.5 py-1 rounded-full border border-cyan-700/30">Advanced Queries</span><span class="bg-cyan-900/40 text-cyan-300 text-xs px-2.5 py-1 rounded-full border border-cyan-700/30">CTEs & Window Fns</span><span class="bg-cyan-900/40 text-cyan-300 text-xs px-2.5 py-1 rounded-full border border-cyan-700/30">BI Integration</span></div>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="rounded-2xl p-6 border border-blue-500/40 bg-blue-600/15 reveal flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 bg-blue-500/25 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-building text-blue-300 text-xl"></i></div>
+          <h3 class="text-white font-bold text-lg mb-2">Custom Enterprise Program</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Need a bespoke training plan for your organisation? We design fully custom curricula to match your tools, team size, timeline, and business objectives.</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fa fa-check text-green-400"></i>On-site &amp; Remote delivery</li>
+            <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fa fa-check text-green-400"></i>Dedicated corporate trainer</li>
+            <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fa fa-check text-green-400"></i>Pre &amp; post-training assessments</li>
+            <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fa fa-check text-green-400"></i>Bulk pricing &amp; invoicing support</li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn-blue justify-center text-sm py-3">Request a Corporate Quote <i class="fa fa-arrow-right text-xs"></i></a>
+      </div>
+
+    </div>
+
+    <!-- Logos / Trusted by -->
+    <div class="text-center reveal">
+      <p class="text-gray-500 text-xs uppercase tracking-widest mb-5">Trusted by teams at</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">Infosys</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">TCS</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">Wipro</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">HCL Tech</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">Cognizant</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">Deloitte</span>
+        <span class="bg-white/5 border border-white/10 text-gray-400 text-sm px-5 py-2.5 rounded-xl font-medium">Accenture</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY CHOOSE US ═══════════════ -->
+<section id="why" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Why Choose Us</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Everything You Need to <span class="text-blue-600">Succeed</span></h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">End-to-end support from learning fundamentals to landing your dream analytics role</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-chalkboard-user text-blue-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Industry Expert Trainers</h3><p class="text-gray-500 text-sm leading-relaxed">Learn from professionals with 10+ years of real-world BI experience at top analytics companies and MNCs.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-laptop-code text-cyan-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Hands-on Live Projects</h3><p class="text-gray-500 text-sm leading-relaxed">Build a strong portfolio with 5+ real-world analytics projects that impress hiring managers at interviews.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-briefcase text-amber-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Real Business Case Studies</h3><p class="text-gray-500 text-sm leading-relaxed">Solve actual business problems from retail, finance, and healthcare domains — just like on the job.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-certificate text-violet-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Certification Preparation</h3><p class="text-gray-500 text-sm leading-relaxed">Complete mock tests, practice labs, and personalized guidance to clear global certifications confidently.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-comments text-pink-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Interview Training</h3><p class="text-gray-500 text-sm leading-relaxed">Dedicated HR and technical interview prep sessions with industry professionals to get you interview-ready.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-file-lines text-teal-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Resume Building</h3><p class="text-gray-500 text-sm leading-relaxed">Craft an ATS-optimized resume and LinkedIn profile with expert guidance that attracts top recruiters.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-handshake text-green-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Placement Assistance</h3><p class="text-gray-500 text-sm leading-relaxed">Direct job referrals to 50+ hiring partners with 100% placement support until you land your dream job.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-clock text-orange-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Flexible Online &amp; Offline</h3><p class="text-gray-500 text-sm leading-relaxed">Choose weekday, weekend, or self-paced batches. Study at your own schedule without sacrificing quality.</p></div>
+      <div class="feature-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover reveal"><div class="feature-icon w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-infinity text-indigo-600 text-xl"></i></div><h3 class="font-semibold text-gray-900 text-lg mb-2">Lifetime Learning Access</h3><p class="text-gray-500 text-sm leading-relaxed">All recordings, study materials, datasets, and community access — permanently, no expiry, no extra charge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CERTIFICATION ═══════════════ -->
+<section id="certification" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Certification Support</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get Certified <span class="text-blue-600">with Confidence</span></h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">Complete guidance for globally recognised certifications that boost your career instantly</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="cert-badge rounded-2xl p-6 border border-blue-100 bg-blue-50 reveal"><div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-chart-bar text-blue-600 text-xl"></i></div><h3 class="text-gray-900 font-bold text-lg mb-1">Microsoft Power BI</h3><p class="text-gray-500 text-sm mb-3">PL-300 Certification — the industry gold standard for BI professionals. Full mock test and exam prep included.</p><span class="text-blue-600 text-xs font-semibold bg-blue-100 px-2.5 py-1 rounded-full">PL-300 Exam Prep ✓</span></div>
+      <div class="cert-badge rounded-2xl p-6 border border-amber-100 bg-amber-50 reveal"><div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-chart-area text-amber-600 text-xl"></i></div><h3 class="text-gray-900 font-bold text-lg mb-1">Tableau Desktop</h3><p class="text-gray-500 text-sm mb-3">Tableau Desktop Specialist and Professional certification prep with practice exams and real dataset labs.</p><span class="text-amber-600 text-xs font-semibold bg-amber-100 px-2.5 py-1 rounded-full">TDS Exam Prep ✓</span></div>
+      <div class="cert-badge rounded-2xl p-6 border border-red-100 bg-red-50 reveal"><div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-fire text-red-600 text-xl"></i></div><h3 class="text-gray-900 font-bold text-lg mb-1">Databricks Associate</h3><p class="text-gray-500 text-sm mb-3">Data Engineer Associate and ML Associate certification guidance with hands-on notebook labs and mock assessments.</p><span class="text-red-600 text-xs font-semibold bg-red-100 px-2.5 py-1 rounded-full">DE-Associate Prep ✓</span></div>
+      <div class="cert-badge rounded-2xl p-6 border border-sky-100 bg-sky-50 reveal"><div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-cubes text-sky-600 text-xl"></i></div><h3 class="text-gray-900 font-bold text-lg mb-1">Microsoft Fabric (DP-600)</h3><p class="text-gray-500 text-sm mb-3">DP-600 Fabric Analytics Engineer certification with scenario-based questions and full lab environment preparation.</p><span class="text-sky-600 text-xs font-semibold bg-sky-100 px-2.5 py-1 rounded-full">DP-600 Exam Prep ✓</span></div>
+      <div class="cert-badge rounded-2xl p-6 border border-violet-100 bg-violet-50 reveal"><div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4"><i class="fa fa-circle-nodes text-violet-600 text-xl"></i></div><h3 class="text-gray-900 font-bold text-lg mb-1">Qlik Sense</h3><p class="text-gray-500 text-sm mb-3">Business Analyst and Data Architect certification with hands-on lab preparation and mock exams.</p><span class="text-violet-600 text-xs font-semibold bg-violet-100 px-2.5 py-1 rounded-full">QlikView/Sense Cert ✓</span></div>
+      <div class="rounded-2xl p-6 border border-gray-200 bg-slate-50 reveal">
+        <h3 class="text-gray-900 font-bold text-lg mb-4">What's Included</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3"><div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><i class="fa fa-check text-green-600 text-xs"></i></div><span class="text-gray-600 text-sm">Mock Tests &amp; Practice Exams</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><i class="fa fa-check text-green-600 text-xs"></i></div><span class="text-gray-600 text-sm">Dedicated Exam Prep Sessions</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><i class="fa fa-check text-green-600 text-xs"></i></div><span class="text-gray-600 text-sm">Hands-on Lab Access</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><i class="fa fa-check text-green-600 text-xs"></i></div><span class="text-gray-600 text-sm">Certification Roadmaps</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><i class="fa fa-check text-green-600 text-xs"></i></div><span class="text-gray-600 text-sm">1-on-1 Doubt Clearing Sessions</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PLACEMENT ═══════════════ -->
+<section id="placement" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal-left">
+        <div class="section-eyebrow mb-2">Placement Support</div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">100% <span class="text-blue-600">Placement Assistance</span></h2>
+        <p class="text-gray-500 text-lg leading-relaxed mb-8">We don't just train you — we walk with you all the way to your offer letter. Our dedicated placement team works until you're placed.</p>
+        <div class="space-y-4">
+          <div class="placement-feature flex items-start gap-4 p-4 rounded-xl hover:bg-white"><div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-file-lines text-blue-600"></i></div><div><div class="font-semibold text-gray-900 mb-0.5">Resume Building Workshops</div><div class="text-sm text-gray-500">ATS-optimized resumes crafted to get past automated screening</div></div></div>
+          <div class="placement-feature flex items-start gap-4 p-4 rounded-xl hover:bg-white"><div class="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-linkedin-in text-violet-600"></i></div><div><div class="font-semibold text-gray-900 mb-0.5">LinkedIn Profile Optimization</div><div class="text-sm text-gray-500">Get 5x more recruiter visibility with a fully optimized profile</div></div></div>
+          <div class="placement-feature flex items-start gap-4 p-4 rounded-xl hover:bg-white"><div class="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-comments text-pink-600"></i></div><div><div class="font-semibold text-gray-900 mb-0.5">Mock Interviews &amp; HR Prep</div><div class="text-sm text-gray-500">Full-round mock interviews with real feedback from hiring managers</div></div></div>
+          <div class="placement-feature flex items-start gap-4 p-4 rounded-xl hover:bg-white"><div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-handshake text-green-600"></i></div><div><div class="font-semibold text-gray-900 mb-0.5">Job Referrals &amp; Career Mentorship</div><div class="text-sm text-gray-500">Direct referrals to 50+ partner companies actively hiring analysts</div></div></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="stat-card text-center py-8 rounded-2xl bg-blue-600 cursor-default"><div class="font-display font-extrabold text-5xl text-white mb-1">500+</div><div class="text-blue-200 text-sm">Students Trained</div></div>
+          <div class="stat-card text-center py-8 rounded-2xl bg-emerald-600 cursor-default"><div class="font-display font-extrabold text-5xl text-white mb-1">200+</div><div class="text-emerald-200 text-sm">Placed in Jobs</div></div>
+          <div class="stat-card text-center py-8 rounded-2xl bg-violet-600 cursor-default"><div class="font-display font-extrabold text-5xl text-white mb-1">50+</div><div class="text-violet-200 text-sm">Hiring Partners</div></div>
+          <div class="stat-card text-center py-8 rounded-2xl bg-amber-600 cursor-default"><div class="font-display font-extrabold text-5xl text-white mb-1">₹8L+</div><div class="text-amber-200 text-sm">Avg. CTC Offered</div></div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+          <p class="text-sm font-semibold text-gray-700 mb-3">Students placed at</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">Infosys</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">TCS</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">Wipro</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">HCL Tech</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">Cognizant</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">Deloitte</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">Accenture</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">KPMG</span>
+            <span class="bg-slate-50 border border-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-full font-medium">+40 More</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section id="testimonials" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Student Reviews</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">What Our <span class="text-blue-600">Students Say</span></h2>
+      <p class="text-gray-500 text-lg">Real success stories from real students who transformed their careers</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"The Power BI training was exceptional. Real projects and placement support helped me land a Business Analyst role within just 2 months of completing the course!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">AK</div><div><div class="font-semibold text-gray-900 text-sm">Arjun Kumar</div><div class="text-xs text-gray-500">Business Analyst @ Infosys</div></div></div></div>
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"Inspire Sights' Databricks course was a game changer — I went from zero Spark knowledge to deploying ML pipelines in production in under 2 months!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm">RV</div><div><div class="font-semibold text-gray-900 text-sm">Rahul Verma</div><div class="text-xs text-gray-500">Data Engineer @ HCL Tech</div></div></div></div>
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star-half-stroke text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"The MS Fabric bootcamp was cutting-edge. I cleared DP-600 on my first attempt and our company is now migrating our whole data platform to Fabric!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold text-sm">MP</div><div><div class="font-semibold text-gray-900 text-sm">Manoj Patel</div><div class="text-xs text-gray-500">BI Developer @ Deloitte</div></div></div></div>
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"As a working professional, the weekend batch was perfect. Advanced Excel and Tableau transformed how I present data at work. Got promoted within 3 months!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">PK</div><div><div class="font-semibold text-gray-900 text-sm">Priya Krishnan</div><div class="text-xs text-gray-500">Senior Analyst @ Wipro</div></div></div></div>
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"Coming from a non-tech background, I was nervous. The structured Tableau course and patient trainers made it easy. I'm now a Data Analyst at TCS!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-violet-600 rounded-full flex items-center justify-center text-white font-bold text-sm">SR</div><div><div class="font-semibold text-gray-900 text-sm">Swetha Rajan</div><div class="text-xs text-gray-500">Data Analyst @ TCS</div></div></div></div>
+      <div class="testimonial-card bg-slate-50 rounded-2xl p-6 border border-gray-100 reveal"><div class="flex gap-0.5 mb-4"><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i><i class="fa fa-star text-amber-400 text-sm"></i></div><p class="text-gray-600 text-sm leading-relaxed mb-5 italic">"I was a commerce graduate with zero tech background. Inspire Sights' structured curriculum and trainers' patience transformed me into a confident BI Developer!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-sm">NK</div><div><div class="font-semibold text-gray-900 text-sm">Nithya Kaur</div><div class="text-xs text-gray-500">BI Developer @ Cognizant</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TRAINERS ═══════════════ -->
+<section id="trainers" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Meet the Team</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Learn from <span class="text-blue-600">Industry Experts</span></h2>
+      <p class="text-gray-500 text-lg">Certified professionals with years of real-world analytics experience</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-7">
+      <div class="trainer-card bg-white rounded-2xl border border-gray-100 p-7 text-center shadow-sm reveal"><div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4 shadow-lg">RK</div><h3 class="font-display font-bold text-xl text-gray-900 mb-1">Rajesh Kumar</h3><p class="text-blue-600 text-sm font-semibold mb-3">Power BI, MS Fabric &amp; Tableau Expert</p><p class="text-gray-500 text-sm leading-relaxed mb-4">12+ years in Business Intelligence at Infosys &amp; Accenture. Microsoft Certified — Power BI PL-300 &amp; Fabric DP-600.</p><div class="flex flex-wrap justify-center gap-1.5"><span class="tag">Power BI</span><span class="tag">MS Fabric</span><span class="tag">Tableau</span><span class="tag">Azure</span></div></div>
+      <div class="trainer-card bg-white rounded-2xl border border-gray-100 p-7 text-center shadow-sm reveal"><div class="w-20 h-20 bg-gradient-to-br from-red-600 to-orange-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4 shadow-lg">SL</div><h3 class="font-display font-bold text-xl text-gray-900 mb-1">Sunita Lakshmi</h3><p class="text-red-600 text-sm font-semibold mb-3">Databricks &amp; Data Engineering Lead</p><p class="text-gray-500 text-sm leading-relaxed mb-4">10+ years as a Data Architect at TCS &amp; Wipro. Databricks Certified Data Engineer &amp; AWS Solutions Architect.</p><div class="flex flex-wrap justify-center gap-1.5"><span class="tag">Databricks</span><span class="tag">PySpark</span><span class="tag">Delta Lake</span><span class="tag">MLflow</span></div></div>
+      <div class="trainer-card bg-white rounded-2xl border border-gray-100 p-7 text-center shadow-sm reveal"><div class="w-20 h-20 bg-gradient-to-br from-emerald-600 to-teal-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4 shadow-lg">AM</div><h3 class="font-display font-bold text-xl text-gray-900 mb-1">Arun Mohan</h3><p class="text-emerald-600 text-sm font-semibold mb-3">Qlik Sense, SQL &amp; Excel Specialist</p><p class="text-gray-500 text-sm leading-relaxed mb-4">8+ years in self-service analytics at Deloitte &amp; KPMG. Qlik Sense Business Analyst Certified &amp; Oracle SQL Expert.</p><div class="flex flex-wrap justify-center gap-1.5"><span class="tag">Qlik Sense</span><span class="tag">QlikView</span><span class="tag">SQL</span><span class="tag">Excel</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq" class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">FAQ</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked <span class="text-blue-600">Questions</span></h2>
+    </div>
+    <div class="space-y-3 reveal">
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">Do I need prior technical experience to enroll?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">Not at all! Our courses are designed for complete beginners. We start from absolute fundamentals — no prior coding or analytics experience required. Students from commerce, arts, engineering, and science backgrounds all thrive here.</div></div></div>
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">What are the prerequisites for Databricks or MS Fabric?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">For Databricks, a basic understanding of SQL and Python (beginner level) is recommended but not mandatory — we cover the essentials in the first week. For MS Fabric, familiarity with Power BI or Azure basics is helpful. Both courses include a foundation module for newcomers.</div></div></div>
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">Are classes available online or only offline?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">Both! We offer online live classes via Zoom/Google Meet, offline classroom sessions, and hybrid options. Weekday and weekend batches are available so you can learn without disrupting your current work or studies.</div></div></div>
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">Is placement support included in the course fee?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">Yes! All our courses include 100% placement assistance at no extra cost. This covers resume building, mock interviews, LinkedIn optimization, job referrals, and mentorship — until you land the job.</div></div></div>
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">Do you offer corporate training for companies?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">Absolutely. We design customised corporate training programs for teams of all sizes. Delivery can be on-site at your office or fully remote. We provide progress tracking, assessments, and co-branded certificates. Contact us for a tailored quote.</div></div></div>
+      <div class="faq-item bg-slate-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"><button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-3" onclick="toggleFaq(this)"><span class="font-semibold text-gray-900 text-base">What is the course duration and batch schedule?</span><i class="fa fa-chevron-down faq-chevron text-gray-400 flex-shrink-0"></i></button><div class="faq-body"><div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed">Individual courses range from 4 to 8 weeks. Full-stack analytics programs span 6–8 months. New batches start every month. Contact us to check the next available batch for your preferred course.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-eyebrow mb-2">Get in Touch</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Start Your <span class="text-blue-600">Analytics Journey</span></h2>
+      <p class="text-gray-500 text-lg">Book a free demo class or talk to our counsellor — no commitment required</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="reveal-left bg-white rounded-2xl border border-gray-100 shadow-lg p-7 sm:p-9">
+        <h3 class="font-display font-bold text-2xl text-gray-900 mb-1">Book a Free Demo Class</h3>
+        <p class="text-gray-500 text-sm mb-7">Fill in your details and we'll call you within 2 hours</p>
+        <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div><label class="block text-xs font-semibold text-gray-700 mb-1.5">Full Name *</label><input type="text" required placeholder="Your full name" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors placeholder-gray-400"></div>
+            <div><label class="block text-xs font-semibold text-gray-700 mb-1.5">Phone Number *</label><input type="tel" required placeholder="+91 98765 43210" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors placeholder-gray-400"></div>
+          </div>
+          <div class="mb-4"><label class="block text-xs font-semibold text-gray-700 mb-1.5">Email Address *</label><input type="email" required placeholder="you@email.com" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors placeholder-gray-400"></div>
+          <div class="mb-4"><label class="block text-xs font-semibold text-gray-700 mb-1.5">Course Interested In</label>
+            <select class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors">
+              <option value="">Select a course</option>
+              <option>Power BI</option><option>Tableau</option><option>Databricks</option><option>Microsoft Fabric</option><option>QlikView</option><option>Qlik Sense</option><option>SQL</option><option>Advanced Excel</option><option>Corporate Training</option><option>Full Analytics Program</option>
+            </select>
+          </div>
+          <div class="mb-6"><label class="block text-xs font-semibold text-gray-700 mb-1.5">Your Background</label>
+            <select class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors">
+              <option value="">Select your background</option>
+              <option>Student / Fresh Graduate</option><option>Working Professional</option><option>Career Switcher</option><option>Corporate / Enterprise Team</option>
+            </select>
+          </div>
+          <div class="mb-6"><label class="block text-xs font-semibold text-gray-700 mb-1.5">Message (Optional)</label><textarea rows="3" placeholder="Any specific questions or goals..." class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 bg-white transition-colors placeholder-gray-400 resize-none"></textarea></div>
+          <button type="submit" class="btn-blue w-full justify-center text-base py-3.5 rounded-xl">Book My Free Demo Class <i class="fa fa-arrow-right"></i></button>
+          <div id="form-success" class="hidden mt-4 bg-green-50 border border-green-200 rounded-xl p-4 text-green-700 text-sm text-center"><i class="fa fa-check-circle mr-2"></i>Thank you! We'll call you within 2 hours.</div>
+        </form>
+      </div>
+      <div class="reveal-right space-y-5">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <h3 class="font-bold text-gray-900 mb-5">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4"><div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-phone text-blue-600"></i></div><div><div class="text-xs text-gray-500 mb-0.5">Phone &amp; WhatsApp</div><a href="tel:+919876543210" class="font-semibold text-gray-900 hover:text-blue-600 transition-colors">+91 98765 43210</a></div></div>
+            <div class="flex items-start gap-4"><div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-envelope text-blue-600"></i></div><div><div class="text-xs text-gray-500 mb-0.5">Email</div><a href="mailto:info@inspiresights.in" class="font-semibold text-gray-900 hover:text-blue-600 transition-colors">info@inspiresights.in</a></div></div>
+            <div class="flex items-start gap-4"><div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-location-dot text-blue-600"></i></div><div><div class="text-xs text-gray-500 mb-0.5">Address</div><span class="font-semibold text-gray-900">123 Analytics Hub, Tech Park Road<br>Chennai, Tamil Nadu 600001</span></div></div>
+            <div class="flex items-start gap-4"><div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa fa-clock text-blue-600"></i></div><div><div class="text-xs text-gray-500 mb-0.5">Working Hours</div><span class="font-semibold text-gray-900">Mon – Sat: 9:00 AM – 8:00 PM</span></div></div>
+          </div>
+          <a href="https://wa.me/919876543210?text=Hi!%20I%27m%20interested%20in%20Data%20Analytics%20courses%20at%20Inspire%20Sights%20Technologies." target="_blank" class="mt-5 flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-all w-full">
+            <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+          </a>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-48 bg-slate-100">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.999999999999!2d80.23!3d13.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzQ4LjAiTiA4MMKwMTMnNDguMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Inspire Sights Technologies location"></iframe>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="bg-blue-50 rounded-xl p-4 text-center"><i class="fa fa-laptop text-blue-600 text-xl mb-2 block"></i><div class="text-xs font-semibold text-gray-700">Online Classes</div></div>
+          <div class="bg-green-50 rounded-xl p-4 text-center"><i class="fa fa-building text-green-600 text-xl mb-2 block"></i><div class="text-xs font-semibold text-gray-700">Classroom</div></div>
+          <div class="bg-violet-50 rounded-xl p-4 text-center"><i class="fa fa-users text-violet-600 text-xl mb-2 block"></i><div class="text-xs font-semibold text-gray-700">Corporate</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="bg-gray-950 text-gray-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center"><i class="fa fa-lightbulb text-white text-sm"></i></div>
+          <div><span class="font-display font-bold text-white text-sm block leading-tight">Inspire Sights</span><span class="text-cyan-400 text-xs">Technologies</span></div>
+        </div>
+        <p class="text-sm leading-relaxed mb-5">Empowering professionals and organisations with cutting-edge data analytics training — from Power BI to Databricks and MS Fabric.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+          <a href="#" class="w-8 h-8 bg-gray-800 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+          <a href="#" class="w-8 h-8 bg-gray-800 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-xs"></i></a>
+          <a href="#" class="w-8 h-8 bg-gray-800 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube text-xs"></i></a>
+          <a href="https://wa.me/919876543210" class="w-8 h-8 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm">Courses</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#courses" class="hover:text-white transition-colors">Power BI Training</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Tableau Training</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Databricks</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Microsoft Fabric</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">QlikView / Qlik Sense</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">SQL Training</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Advanced Excel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#corporate" class="hover:text-white transition-colors">Corporate Trainings</a></li>
+          <li><a href="#certification" class="hover:text-white transition-colors">Certifications</a></li>
+          <li><a href="#placement" class="hover:text-white transition-colors">Placement Support</a></li>
+          <li><a href="#trainers" class="hover:text-white transition-colors">Our Trainers</a></li>
+          <li><a href="#testimonials" class="hover:text-white transition-colors">Student Reviews</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-2"><i class="fa fa-phone text-blue-400 mt-0.5 text-xs"></i><a href="tel:+919876543210" class="hover:text-white transition-colors">+91 98765 43210</a></li>
+          <li class="flex items-start gap-2"><i class="fa fa-envelope text-blue-400 mt-0.5 text-xs"></i><a href="mailto:info@inspiresights.in" class="hover:text-white transition-colors break-all">info@inspiresights.in</a></li>
+          <li class="flex items-start gap-2"><i class="fa fa-location-dot text-blue-400 mt-0.5 text-xs"></i><span>123 Analytics Hub, Tech Park Road, Chennai, TN 600001</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <span>© 2025 Inspire Sights Technologies. All rights reserved.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919876543210?text=Hi!%20I%27m%20interested%20in%20Data%20Analytics%20courses%20at%20Inspire%20Sights%20Technologies." target="_blank" class="wa-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-xl" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+</a>
+<!-- Back to top -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="hidden fixed bottom-6 right-24 z-50 w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-all" aria-label="Back to top">
+  <i class="fa fa-arrow-up text-white text-sm"></i>
+</button>
+
+<script>
+// ─── Hero bar chart ───
+window.addEventListener('DOMContentLoaded', () => {
+  const bars = document.getElementById('hero-bars');
+  if (!bars) return;
+  const vals = [45, 60, 52, 70, 85, 100];
+  const cols = ['bg-blue-700','bg-blue-600','bg-blue-500','bg-cyan-500','bg-cyan-400','bg-blue-400'];
+  bars.innerHTML = '';
+  vals.forEach((v, i) => {
+    const b = document.createElement('div');
+    b.className = `${cols[i]} rounded-t flex-1 transition-all duration-1000`;
+    b.style.height = '0%';
+    bars.appendChild(b);
+    setTimeout(() => { b.style.height = v + '%'; }, 400 + i * 120);
+  });
+  setTimeout(() => {
+    const p1 = document.getElementById('pb1');
+    const p2 = document.getElementById('pb2');
+    const p3 = document.getElementById('pb3');
+    if (p1) p1.style.width = '92%';
+    if (p2) p2.style.width = '88%';
+    if (p3) p3.style.width = '85%';
+  }, 600);
+});
+
+// ─── Navbar scroll ───
+const navbar = document.getElementById('navbar');
+const demoBanner = document.getElementById('demo-banner');
+window.addEventListener('scroll', () => {
+  const bannerH = demoBanner.offsetHeight || 40;
+  if (window.scrollY > 60) {
+    navbar.classList.add('solid');
+    navbar.style.top = '0';
+  } else {
+    navbar.classList.remove('solid');
+    navbar.style.top = bannerH + 'px';
+  }
+  const backTop = document.getElementById('back-top');
+  if (backTop) backTop.classList.toggle('hidden', window.scrollY < 400);
+});
+
+// ─── Mobile menu ───
+document.getElementById('mob-toggle').addEventListener('click', function () {
+  const m = document.getElementById('mob-menu');
+  const ico = document.getElementById('mob-icon');
+  m.classList.toggle('open');
+  ico.className = m.classList.contains('open') ? 'fa fa-xmark text-xl' : 'fa fa-bars text-xl';
+});
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => {
+  document.getElementById('mob-menu').classList.remove('open');
+  document.getElementById('mob-icon').className = 'fa fa-bars text-xl';
+}));
+
+// ─── Scroll reveal ───
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// ─── Counter animation ───
+const counters = document.querySelectorAll('.counter');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const step = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 25);
+      cio.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cio.observe(c));
+
+// ─── FAQ accordion ───
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.faq-body').classList.remove('open');
+  });
+  if (!isActive) { item.classList.add('active'); body.classList.add('open'); }
+}
+
+// ─── Form submit ───
+function handleSubmit(e) {
+  e.preventDefault();
+  const success = document.getElementById('form-success');
+  success.classList.remove('hidden');
+  e.target.reset();
+  setTimeout(() => success.classList.add('hidden'), 5000);
+}
+
+// ─── Smooth scroll ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href.length > 1) {
+      const el = document.querySelector(href);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
+</script>
+</body>
+</html>
